@@ -3,12 +3,10 @@
    .card-body {
     padding: 0;
     margin: 5px;
+    border: 1px solid #6c757d85;
 }
 thead tr{
         background-color: #2083e4;
-}
-#dateTime, #time{
-        height: 40px;
 }
 </style>
 <body class="fix-header fix-sidebar">
@@ -60,9 +58,8 @@ thead tr{
                            </div>
                         </div>
                     <div class="col-lg-12">
-                        <div class="card mydata">   
+                        <div class="card mydata">
                             <div class="card-body">   
-                                     <button style="float:right;margin-bottom: 5px;" class="btn btn-primary" id="sendToPi"><i class="fa fa-database"></i> Send Data to PI <i class="fa fa-send"></i></button>
                                     <table id="tableData" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
@@ -93,18 +90,7 @@ thead tr{
     <!-- End Wrapper -->
     <!-- All Jquery -->
     <?php include('includes/footer-min.php');?>
-    <script>       
-            $("#sendToPi").click(function(){
-                    $.each($(".WebId"), function(){ 
-                        var Value = $(this).val();
-                        var Id = $(this).attr("data-Id");
-                        var WebId = $(this).attr("data-WebId");
-                        //console.log(Id+" - "+Value+" - "+WebId);
-                        $(".status"+Id).html("<img style='width:30px;height:30px;' src='<?php echo base_url();?>piadmin/images/loady.gif'>");
-                        saveValue(Id, WebId,Value);
-                        });
-            });
-            
+    <script>            
                var now = new Date();       
                  $(function() {                   
                     var month = (now.getMonth() + 1);
@@ -182,7 +168,7 @@ thead tr{
 							attrValue = (Math.round((attrV) * 100) / 100);
 						}
 					}  
-           $('#tableData tbody').append("<tr><td>"+sr+"</td><td>"+cpp540coalAnalysis[key].title+"</td><td>"+uom+"</td><td><input type='text' id='value"+sr+"' data-id='"+sr+"' data-WebId='"+WebId+"' value='"+attrValue+"' class='form-control input-manual WebId'></td><td><div class='status"+sr+"'></div></td></tr>")
+           $('#tableData tbody').append("<tr><td>"+sr+"</td><td>"+cpp540coalAnalysis[key].title+"</td><td><span class='show showuom"+sr+"'>"+uom+"</span><input type='text' id='uom"+sr+"' value='"+uom+"' class='form-control input-manual hide hideuom"+sr+"'></td><td><input type='text' id='value"+sr+"' value='"+attrValue+"' class='form-control input-manual WebId hideValue"+sr+"'></td><td style='padding-left: 3%;'><div class='show showedit"+sr+"'><button class='btn btn-primary btn-manual card' onclick='editValue("+sr+")';><i class='fa fa-edit'></i></button></div><div class='hide undo"+sr+"'><button class='btn btn-info btn-manual card' onclick='undo("+sr+")';><i class='fa fa-undo'></i></button><button class='btn btn-success btn-manual card' onclick='saveValue("+sr+",this.value)'; value='"+WebId+"'><i class='fa fa-save'></i></button></div></td></tr>")
             sr++;
     });
            
@@ -190,33 +176,35 @@ thead tr{
     
       
                      /****Each Save Button START***/
-    function saveValue(Id, WebId,Value) {
+    function saveValue(Id, WebId) {
                    var date =    $("#dateTime").val();
                    var time =    $("#time").val();
                     var dateTime = (date + ' ' + time);
+                    var uom = $("#uom"+Id).val();
+                    var dataValues = $("#value"+Id).val();
                     var url = baseServiceUrl + 'streams/' + WebId + '/recorded?WebId=' + WebId + '&bufferOption=DoNotBuffer&updateOption=Replace';
                     var data = [{
                         "Timestamp": dateTime,
+                        "UnitsAbbreviation": uom,
                         "Good": true,
                         "Questionable": false,
-                        "Value": Value
+                        "Value": dataValues
                     }];
                     var postData = JSON.stringify(data);
                     var postAjaxEF = processJsonContent(url, 'POST', postData, null, null);
                     $.when(postAjaxEF).fail(function() {
-                        //errormsg("Cannot Post The Data.");
-                        $(".status"+Id).html("<span style='color:red;font-weight:500;font-size: 18px;'><i class='fa fa-times-circle'></i> Failed.</span>");
+                        errormsg("Cannot Post The Data.");
                     });
                     $.when(postAjaxEF).done(function() {
                         var response = (JSON.stringify(postAjaxEF.responseText));
                         if (response == '""') {
-                            //successmsg("Data Updated successfully.");
-                            $(".status"+Id).html("<span style='color:green;font-weight:500;font-size: 18px;'><i class='fa fa-check-circle'></i> Success.</span>");
+                            successmsg("Data Updated successfully.");
+                            undo(Id);
+                            $(".showValue"+Id).text(dataValues);
                         } else {
                             var failure = postAjaxEF.responseJSON.Items;
                             $.each(failure, function(key) {
-                               // warningmsg("Status: " + failure[key].Substatus + " <br> Message: " + failure[key].Message);
-                                 $(".status"+Id).html("<span style='color:red;font-weight:500;font-size: 18px;'><i class='fa fa-times-circle'></i> Failed.</span>");
+                                warningmsg("Status: " + failure[key].Substatus + " <br> Message: " + failure[key].Message);
                             })
                         }
                     });

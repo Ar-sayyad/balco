@@ -4883,7 +4883,7 @@ footer p {
   margin-bottom: 20px;
 }
 .form-control {
-  height: 42px;
+  height: 30px;
   border-radius: 0;
   box-shadow: none;
   border-color: rgba(0, 0, 0, 0.22);
@@ -5431,7 +5431,7 @@ tbody tr th {
 }
 tbody tr td {
   font-family: inherit;
-  font-size: 16px;
+  font-size: 15px;
   color: #2f3d4a;
   /* font-weight: 501; */
 }
@@ -5444,7 +5444,7 @@ tbody tr td:last-child {
 .table > tfoot > tr > th,
 .table > thead > tr > td,
 .table > thead > tr > th {
-  line-height: 25px !important;
+  line-height: 30px !important;
   vertical-align: middle;
   /* text-align: left; */
 }
@@ -5489,7 +5489,7 @@ tbody tr td:last-child {
 }
 .table td,
 .table th {
-  padding: 0.55rem;
+  padding: 1px;
 }
 .table .round-img img {
   width: 38px;
@@ -6962,7 +6962,8 @@ tbody tr td:last-child {
          margin-left: 5px;
         }
         .input-manual{
-              width: 150px;
+              /* width: 150px; */
+              height: 32px;
               text-align: center;
         }
         .datetimeDiv{

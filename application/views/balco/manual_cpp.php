@@ -7,9 +7,6 @@
 thead tr{
         background-color: #2083e4;
 }
-#dateTime, #time{
-        height: 40px;
-}
 </style>
 <body class="fix-header fix-sidebar">
    <?php include('includes/preloader.php');?>
@@ -100,7 +97,7 @@ thead tr{
                         var Id = $(this).attr("data-Id");
                         var WebId = $(this).attr("data-WebId");
                         //console.log(Id+" - "+Value+" - "+WebId);
-                        $(".status"+Id).html("<img style='width:30px;height:30px;' src='<?php echo base_url();?>piadmin/images/loady.gif'>");
+                        $(".status"+Id).empty();
                         saveValue(Id, WebId,Value);
                         });
             });
@@ -205,18 +202,18 @@ thead tr{
                     var postAjaxEF = processJsonContent(url, 'POST', postData, null, null);
                     $.when(postAjaxEF).fail(function() {
                         //errormsg("Cannot Post The Data.");
-                        $(".status"+Id).html("<span style='color:red;font-weight:500;font-size: 18px;'><i class='fa fa-times-circle'></i> Failed.</span>");
+                        $(".status"+Id).html("<span style='color:red;font-weight:500;font-size: 18px;'>Cannot Post Invalid Data.</span>");
                     });
                     $.when(postAjaxEF).done(function() {
                         var response = (JSON.stringify(postAjaxEF.responseText));
                         if (response == '""') {
                             //successmsg("Data Updated successfully.");
-                            $(".status"+Id).html("<span style='color:green;font-weight:500;font-size: 18px;'><i class='fa fa-check-circle'></i> Success.</span>");
+                            $(".status"+Id).html("<span style='color:green;font-weight:500;font-size: 18px;'>Data Updated Successfully.</span>");
                         } else {
                             var failure = postAjaxEF.responseJSON.Items;
                             $.each(failure, function(key) {
                                // warningmsg("Status: " + failure[key].Substatus + " <br> Message: " + failure[key].Message);
-                                 $(".status"+Id).html("<span style='color:red;font-weight:500;font-size: 18px;'><i class='fa fa-times-circle'></i> Failed.</span>");
+                                 $(".status"+Id).html("<span style='color:yellow;font-weight:500;font-size: 18px;'>Status: " + failure[key].Substatus + " <br> Message: " + failure[key].Message+"</span>");
                             })
                         }
                     });

@@ -3,10 +3,12 @@
         .card-body {
     padding: 0;
     margin: 5px;
-    border: 1px solid #6c757d85;
 }
 thead tr{
         background-color: #2083e4;
+}
+#dateTime, #time{
+        height: 40px;
 }
 </style>
 <body class="fix-header fix-sidebar">
@@ -59,7 +61,9 @@ thead tr{
                         </div>
                     <div class="col-lg-12">
                         <div class="card mydata">
-                            <div class="card-body">   
+                            <div class="card-body"> 
+                                     <button style="float:right;margin-bottom: 5px;" class="btn btn-primary" id="sendToPi"><i class="fa fa-database"></i> Send Data to PI <i class="fa fa-send"></i></button>
+                                    
                                     <table id="Unit1" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
@@ -67,7 +71,7 @@ thead tr{
                                             <th style="width: 50% !important;">Unit 1 Parameters</th>
                                             <th style="width: 15% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
-                                            <th style="width: 20% !important;">Actions</th>
+                                            <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
                                         <tbody>
@@ -82,7 +86,7 @@ thead tr{
                                             <th style="width: 50% !important;">Unit 2 Parameters</th>
                                             <th style="width: 15% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
-                                            <th style="width: 20% !important;">Actions</th>
+                                            <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
                                         <tbody>
@@ -97,7 +101,7 @@ thead tr{
                                             <th style="width: 50% !important;">Unit 3 Parameters</th>
                                             <th style="width: 15% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
-                                            <th style="width: 20% !important;">Actions</th>
+                                            <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
                                         <tbody>
@@ -112,7 +116,7 @@ thead tr{
                                             <th style="width: 50% !important;">Unit 4 Parameters</th>
                                             <th style="width: 15% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
-                                            <th style="width: 20% !important;">Actions</th>
+                                            <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
                                         <tbody>
@@ -127,7 +131,7 @@ thead tr{
                                             <th style="width: 50% !important;">Other Parameters</th>
                                             <th style="width: 15% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
-                                            <th style="width: 20% !important;">Actions</th>
+                                            <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
                                         <tbody>
@@ -150,7 +154,18 @@ thead tr{
     <!-- End Wrapper -->
     <!-- All Jquery -->
     <?php include('includes/footer-min.php');?>
-    <script>            
+    <script>       
+            $("#sendToPi").click(function(){
+                    $.each($(".WebId"), function(){ 
+                        var Value = $(this).val();
+                        var Id = $(this).attr("data-Id");
+                        var WebId = $(this).attr("data-WebId");
+                        //console.log(Id+" - "+Value+" - "+WebId);
+                        $(".status"+Id).html("<img style='width:30px;height:30px;' src='<?php echo base_url();?>piadmin/images/loady.gif'>");
+                        saveValue(Id, WebId,Value);
+                        });
+            });
+            
                var now = new Date();       
                  $(function() {                   
                     var month = (now.getMonth() + 1);
@@ -175,34 +190,14 @@ thead tr{
                       });
                       
                    
-                    function editValue(id){
-                          $(".showuom"+id).removeClass('show');
-                          $(".showuom"+id).addClass('hide');                          
-                          $(".hideuom"+id).removeClass('hide');
-                          $(".hideuom"+id).addClass('show');
-                          
-                          $(".showValue"+id).removeClass('show');
-                          $(".showValue"+id).addClass('hide');
-                          $(".hideValue"+id).removeClass('hide');
-                          $(".hideValue"+id).addClass('show');
-                          
+                    function editValue(id){                                                  
                           $(".showedit"+id).removeClass('show');
                           $(".showedit"+id).addClass('hide');
                           
                           $(".undo"+id).removeClass('hide');
                           $(".undo"+id).addClass('show');   
                    }
-                   function undo(id){
-                          $(".showuom"+id).removeClass('hide');
-                          $(".showuom"+id).addClass('show');                          
-                          $(".hideuom"+id).removeClass('show');
-                          $(".hideuom"+id).addClass('hide');
-                          
-                          $(".showValue"+id).removeClass('hide');
-                          $(".showValue"+id).addClass('show');
-                          $(".hideValue"+id).removeClass('show');
-                          $(".hideValue"+id).addClass('hide');
-                          
+                   function undo(id){                                                    
                           $(".showedit"+id).removeClass('hide');
                           $(".showedit"+id).addClass('show');
                           
@@ -246,7 +241,8 @@ thead tr{
 							attrValue = (Math.round((attrV) * 100) / 100);
 						}
 					}  
-           $('#'+cpp540DGR[key].unitname+' tbody').append("<tr><td>"+cpp540DGR[key].title+"</td><td><span class='show showuom"+sr+"'>"+uom+"</span><input type='text' id='uom"+sr+"' value='"+uom+"' class='form-control input-manual hide hideuom"+sr+"'></td><td><span class='show showValue"+sr+"'>"+attrValue+"</span><input type='text' id='value"+sr+"' value='"+attrValue+"' class='form-control input-manual hide hideValue"+sr+"'></td><td style='padding-left: 3%;'><div class='show showedit"+sr+"'><button class='btn btn-primary btn-manual card' onclick='editValue("+sr+")';><i class='fa fa-edit'></i></button></div><div class='hide undo"+sr+"'><button class='btn btn-info btn-manual card' onclick='undo("+sr+")';><i class='fa fa-undo'></i></button><button class='btn btn-success btn-manual card' onclick='saveValue("+sr+",this.value)'; value='"+WebId+"'><i class='fa fa-save'></i></button></div></td></tr>")
+                                                  $('#'+cpp540DGR[key].unitname+' tbody').append("<tr><td>"+cpp540DGR[key].title+"</td><td>"+uom+"</td><td><input type='text' id='value"+sr+"' data-id='"+sr+"' data-WebId='"+WebId+"' value='"+attrValue+"' class='form-control input-manual WebId'></td><td><div class='status"+sr+"'></div></td></tr>")
+           //$('#'+cpp540DGR[key].unitname+' tbody').append("<tr><td>"+cpp540DGR[key].title+"</td><td>"+uom+"</td><td><span class='show showValue"+sr+"'>"+attrValue+"</span><input type='text' id='value"+sr+"' value='"+attrValue+"' class='form-control input-manual hide hideValue"+sr+"'></td><td style='padding-left: 3%;'><div class='show showedit"+sr+"'><button class='btn btn-primary btn-manual card' onclick='editValue("+sr+")';><i class='fa fa-edit'></i></button></div><div class='hide undo"+sr+"'><button class='btn btn-info btn-manual card' onclick='undo("+sr+")';><i class='fa fa-undo'></i></button><button class='btn btn-success btn-manual card' onclick='saveValue("+sr+",this.value)'; value='"+WebId+"'><i class='fa fa-save'></i></button></div></td></tr>");
             sr++;
     });
            
@@ -254,35 +250,33 @@ thead tr{
     
       
                      /****Each Save Button START***/
-    function saveValue(Id, WebId) {
+  function saveValue(Id, WebId,Value) {
                    var date =    $("#dateTime").val();
                    var time =    $("#time").val();
                     var dateTime = (date + ' ' + time);
-                    var uom = $("#uom"+Id).val();
-                    var dataValues = $("#value"+Id).val();
                     var url = baseServiceUrl + 'streams/' + WebId + '/recorded?WebId=' + WebId + '&bufferOption=DoNotBuffer&updateOption=Replace';
                     var data = [{
                         "Timestamp": dateTime,
-                        "UnitsAbbreviation": uom,
-                        "Good": !0,
-                        "Questionable": !1,
-                        "Value": dataValues
+                        "Good": true,
+                        "Questionable": false,
+                        "Value": Value
                     }];
                     var postData = JSON.stringify(data);
                     var postAjaxEF = processJsonContent(url, 'POST', postData, null, null);
                     $.when(postAjaxEF).fail(function() {
-                        errormsg("Cannot Post The Data.");
+                        //errormsg("Cannot Post The Data.");
+                        $(".status"+Id).html("<span style='color:red;font-weight:500;font-size: 18px;'><i class='fa fa-times-circle'></i> Failed.</span>");
                     });
                     $.when(postAjaxEF).done(function() {
                         var response = (JSON.stringify(postAjaxEF.responseText));
                         if (response == '""') {
-                            successmsg("Data Updated successfully.");
-                            undo(Id);
-                            $(".showValue"+Id).text(dataValues);
+                            //successmsg("Data Updated successfully.");
+                            $(".status"+Id).html("<span style='color:green;font-weight:500;font-size: 18px;'><i class='fa fa-check-circle'></i> Success.</span>");
                         } else {
                             var failure = postAjaxEF.responseJSON.Items;
                             $.each(failure, function(key) {
-                                warningmsg("Status: " + failure[key].Substatus + " <br> Message: " + failure[key].Message);
+                               // warningmsg("Status: " + failure[key].Substatus + " <br> Message: " + failure[key].Message);
+                                 $(".status"+Id).html("<span style='color:red;font-weight:500;font-size: 18px;'><i class='fa fa-times-circle'></i> Failed.</span>");
                             })
                         }
                     });
