@@ -1,0 +1,5 @@
+$(document).ready(function(){$('#password').keydown(function(event){if(event.keyCode==13){$('#loginbtn').trigger('click')}});$('#loginbtn').click(function(){$('#res').html("<img style='width:25px;height:25px;'  src='"+baseurl+"piadmin/images/loading.gif'>");$username=$('#username').val();$password=$('#password').val();if($username==''||$password=='')
+{$('#res').html("<span style='color:red;text-transform:capitalize;font-size:14px'>Enter login details..!</span>");return!1}
+$.post(baseurl+'Balco/validateLogin',{username:$username,password:$password},function(data){if(data==1)
+{$('#res').html("<span style='color:green;text-transform:capitalize;font-size:13px'>Login Success..!</span>\n\
+              <br><img style='width:25px;height:25px;' src='"+baseurl+"piadmin/images/loading.gif'><br><span style='font-size:12px'>Redirecting.....</span>");window.location=baseurl}else{$('#res').html("<span style='color:red;text-transform:capitalize;font-size:14px'>"+data+"</span>")}})})})

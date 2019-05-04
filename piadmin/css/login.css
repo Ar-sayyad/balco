@@ -1,0 +1,36 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+#main-wrapper{
+    background-image: url("../images/bg/lock.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login-content {
+    margin: 30% 0 !important;
+}
+.card {
+    background: rgba(169, 169, 169, 0.57) none repeat scroll 0 0;
+    padding: 20px;
+    border: 1px solid rgba(169, 169, 169, 0.2);
+    border-radius: 3px;
+    box-shadow: 0px 0px 3px #e7e7e7;
+}
+.login-form {
+    background: #ffffff;
+    padding: 0px 20px 0px;
+    border-radius: 3px;
+}
+.form-control {
+    height: 40px;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #6c757d;
+    font-size: 14px;
+    border-color: #abb6ba;
+    font-family: 'Verdana', sans-serif;
+    background-color: rgb(239, 239, 239);
+}
