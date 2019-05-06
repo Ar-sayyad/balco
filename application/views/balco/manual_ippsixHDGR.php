@@ -64,11 +64,11 @@ thead tr{
                             <div class="card-body"> 
                                      <button style="float:right;margin-bottom: 5px;" class="btn btn-primary" id="sendToPi"><i class="fa fa-database"></i> Send Data to PI <i class="fa fa-send"></i></button>
                                     
-                                    <table id="Unit1" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
+                                    <table id="ipp600unit1" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
                                             <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 35% !important;">Unit 1 Parameters</th>
+                                            <th style="width: 35% !important;">IPP600 Unit1 Parameters</th>
                                             <th style="width: 20% !important;">Name</th>
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
@@ -80,11 +80,11 @@ thead tr{
                                     </table>
                             </div>
                                  <div class="card-body">   
-                                    <table id="Unit2" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
+                                    <table id="ipp600unit2" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
                                            <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 35% !important;">Unit 2 Parameters</th>
+                                            <th style="width: 35% !important;">IPP600 Unit2 Parameters</th>
                                             <th style="width: 20% !important;">Name</th>
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
@@ -94,29 +94,13 @@ thead tr{
                                         <tbody>
                                         </tbody>
                                     </table>
-                                 </div>
-                                 <div class="card-body">   
-                                    <table id="Unit3" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
-                                        <thead>
-                                           <tr>
-                                            <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 35% !important;">Unit 3 Parameters</th>
-                                            <th style="width: 20% !important;">Name</th>
-                                            <th style="width: 10% !important;">UOM</th>
-                                            <th style="width: 15% !important;">Value</th>
-                                            <th style="width: 20% !important;">Status</th>
-                                           </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                 </div>
-                                 <div class="card-body">   
-                                    <table id="Unit4" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
+                                 </div>   
+                                <div class="card-body">   
+                                    <table id="ipp600other" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
                                            <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 35% !important;">Unit 4 Parameters</th>
+                                            <th style="width: 35% !important;">Oil & Other Parameters</th>
                                             <th style="width: 20% !important;">Name</th>
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
@@ -126,23 +110,8 @@ thead tr{
                                         <tbody>
                                         </tbody>
                                     </table>
-                                 </div>
-                                 <div class="card-body">   
-                                     <table id="other" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
-                                        <thead>
-                                           <tr>
-                                            <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 35% !important;">Other Parameters</th>
-                                            <th style="width: 20% !important;">Name</th>
-                                            <th style="width: 10% !important;">UOM</th>
-                                            <th style="width: 15% !important;">Value</th>
-                                            <th style="width: 20% !important;">Status</th>
-                                           </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                            </div>
+                                 </div>   
+                                 
                         </div>
                     </div>                  
                 </div>             
@@ -159,7 +128,7 @@ thead tr{
     <!-- End Wrapper -->
     <!-- All Jquery -->
     <?php include('includes/footer-min.php');?>
- <script src="<?php echo base_url();?>piadmin/js/manual_cppfiveFourtyDGR.js" type="text/javascript"></script>   
+ <script src="<?php echo base_url();?>piadmin/js/manual_ippsixHDGR.js" type="text/javascript"></script>    
      <!-- Styles -->
 </body>
 </html>

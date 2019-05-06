@@ -49,20 +49,6 @@
     <!-- End Wrapper -->
     <!-- All Jquery -->
     <?php include('includes/footer-min.php');?>
-	<script type="text/javascript">
- function PrintElem(el){
-	var restorepage = document.body.innerHTML;
-	var printcontent = document.getElementById(el).innerHTML;
-	document.body.innerHTML = printcontent;
-
-	window.print();
-  
-	document.body.innerHTML = restorepage;
-       window.location.reload();
-      // return true;
-}
-</script>   
-     <!-- Styles -->
- <script>
+    <script src="<?php echo base_url();?>piadmin/js/screen.js" type="text/javascript"></script> 
 </body>
 </html>

@@ -53,14 +53,21 @@ class Manual extends CI_Controller {
                 $this->load->view('balco/manual_pptwelveHCA',$data); 
           }     
        
-         public function pptwelveHDGR(){
-                $data['title'] = "Manual Entry <i class='fa fa-angle-double-right'></i> PP 1200 Coal Analysis";
-                $data['titlebar'] = "Reports >> PP 1200 DGR Manual Entry";
+         public function ippsixHDGR(){
+                $data['title'] = "Manual Entry <i class='fa fa-angle-double-right'></i> IPP 600 DGR Manual Entry";
+                $data['titlebar'] = "Reports >> IPP 600 DGR Manual Entry";
                 $data['icons'] = "bubble_chart";
                 $data['path'] = "";
-                $this->load->view('balco/manual_pptwelveHDGR',$data); 
+                $this->load->view('balco/manual_ippsixHDGR',$data); 
           }       
         
+          public function cppsixHDGR(){
+                $data['title'] = "Manual Entry <i class='fa fa-angle-double-right'></i> CPP 600 DGR Manual Entry";
+                $data['titlebar'] = "Reports >> CPP 600 DGR Manual Entry";
+                $data['icons'] = "bubble_chart";
+                $data['path'] = "";
+                $this->load->view('balco/manual_cppsixHDGR',$data); 
+          }      
         
                                
         /***********PP 1200 MW************/

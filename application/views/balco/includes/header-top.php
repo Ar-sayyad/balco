@@ -18,4 +18,5 @@
     <link href="<?php echo base_url();?>piadmin/css/lobibox.min.css"/>
     <link href="<?php echo base_url();?>piadmin/css/animate.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo base_url();?>piadmin/css/icons.css" rel="stylesheet" type="text/css"/>
+    <script>var baseurl = "<?php echo base_url();?>";</script>
 </head>
