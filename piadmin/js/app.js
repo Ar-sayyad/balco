@@ -32,14 +32,14 @@ var makeBasicAuth = function (user, password) {
 
 
 var cpp540coalAnalysis=[
-           {
-                "title":"CPP540 Coal Analysis GCV",
-                "UOM":"kcal/kg",
+        {
+                "title":"CPP540 Coal Analysis Ash content",
+                "UOM":"%",
                 "status":"Value written",
-                "tagname":"BALCO_CPP540_CoalAnalysis_GCV.Man",
-                "parameter":"CoalAnalysis_GCV.Man",
+                "tagname":"BALCO_CPP540_CoalAnalysis_Ash.Man",
+                "parameter":"CoalAnalysis_Ash.Man",
                 "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
-                "path":"path={0}|CoalAnalysis_GCV.Man"
+                "path":"path={0}|CoalAnalysis_Ash.Man"
            },
            {
                 "title":"CPP540 Coal Analysis Fixed Carbon content",
@@ -51,6 +51,15 @@ var cpp540coalAnalysis=[
                 "path":"path={0}|CoalAnalysis_Fixed_Carbon.Man"
            },
            {
+                "title":"CPP540 Coal Analysis GCV",
+                "UOM":"kcal/kg",
+                "status":"Value written",
+                "tagname":"BALCO_CPP540_CoalAnalysis_GCV.Man",
+                "parameter":"CoalAnalysis_GCV.Man",
+                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
+                "path":"path={0}|CoalAnalysis_GCV.Man"
+           },           
+           {
                 "title":"CPP540 Coal Analysis Moisture content",
                 "UOM":"%",
                 "status":"Value written",
@@ -58,6 +67,24 @@ var cpp540coalAnalysis=[
                 "parameter":"CoalAnalysis_Moisture.Man",
                 "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
                 "path":"path={0}|CoalAnalysis_Moisture.Man"
+           },
+            {
+                "title":"CPP540 Coal Analysis Unburnt Carbon in Bottom Ash",
+                "UOM":"%",
+                "status":"Value written",
+                "tagname":"BALCO_CPP540_CoalAnalysis_Unburnt_BotAsh.Man",
+                "parameter":"CoalAnalysis_Unburnt_BotAsh.Man",
+                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
+                "path":"path={0}|CoalAnalysis_Unburnt_BotAsh.Man"
+           },           
+           {
+                "title":"CPP540 Coal Analysis Unburnt Carbon in Fly Ash",
+                "UOM":"%",
+                "status":"Value written",
+                "tagname":"BALCO_CPP540_CoalAnalysis_Unburnt_FlyAsh.Man",
+                "parameter":"CoalAnalysis_Unburnt_FlyAsh.Man",
+                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
+                "path":"path={0}|CoalAnalysis_Unburnt_FlyAsh.Man"
            },
            {
                 "title":"CPP540 Coal Analysis Volatile Matter content",
@@ -67,35 +94,7 @@ var cpp540coalAnalysis=[
                 "parameter":"CoalAnalysis_Volatile_Matter.Man",
                 "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
                 "path":"path={0}|CoalAnalysis_Volatile_Matter.Man"
-           },
-           {
-                "title":"CPP540 Coal Analysis Ash content",
-                "UOM":"%",
-                "status":"Value written",
-                "tagname":"BALCO_CPP540_CoalAnalysis_Ash.Man",
-                "parameter":"CoalAnalysis_Ash.Man",
-                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
-                "path":"path={0}|CoalAnalysis_Ash.Man"
-           },
-           {
-                "title":"CPP540 Coal Analysis Unburnt Carbon in Bottom Ash",
-                "UOM":"%",
-                "status":"Value written",
-                "tagname":"BALCO_CPP540_CoalAnalysis_Unburnt_BotAsh.Man",
-                "parameter":"CoalAnalysis_Unburnt_BotAsh.Man",
-                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
-                "path":"path={0}|CoalAnalysis_Unburnt_BotAsh.Man"
-           },
-           {
-                "title":"CPP540 Coal Analysis Unburnt Carbon in Fly Ash",
-                "UOM":"%",
-                "status":"Value written",
-                "tagname":"BALCO_CPP540_CoalAnalysis_Unburnt_FlyAsh.Man",
-                "parameter":"CoalAnalysis_Unburnt_FlyAsh.Man",
-                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
-                "path":"path={0}|CoalAnalysis_Unburnt_FlyAsh.Man"
            }
-   
 ];
 
 var cpp540DGR=[
@@ -257,7 +256,7 @@ var cpp540DGR=[
                 "title":"Unit4 Trippings",
                  "sr":16,
                 "UOM":"-",
-                "unitname":"other",
+                "unitname":"Unit4",
                 "tagname":"BALCO_CPP540_U4_TRIPS.MAN",
                 "parameter":"TRIPS.MAN",
                 "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW\\Unit%204",

@@ -6971,12 +6971,12 @@ tbody tr td:last-child {
         }
         .newcard{
                       background: #ffffff none repeat scroll 0 0;
-    margin: 5px;
-    max-width: 24% !important;
-    padding: 2px;
-        border: 1px solid rgba(169, 169, 169, 0.11);
-    border-radius: 0px;
-    text-align: right;
+                      margin: 5px;
+                      max-width: 24% !important;
+                      padding: 2px;
+                      border: 1px solid rgba(169, 169, 169, 0.11);
+                      border-radius: 0px;
+                      text-align: center;
         }
         .datediv{
                 text-align: end;

@@ -8,7 +8,9 @@
                         saveValue(Id, WebId,Value);
                         });
             });
-            
+            $("#editTime").click(function(){
+            $("#time").removeAttr("readonly")
+    });
                var now = new Date();       
                  $(function() {                   
                     var month = (now.getMonth() + 1);
@@ -29,7 +31,7 @@
                         if(h < 10) h = '0' + h; 
                         if(m < 10) m = '0' + m; 
                         if(s < 10) s = '0' + s;
-                        $('input[type="time"][name="time"]').attr({'value': h + ':' + m + ':' + s });
+                        $('input[type="time"][name="time"]').attr({'value': '05:00:00' });
                       });
                    
                   var sr=1;    
@@ -69,7 +71,7 @@
 							attrValue = (Math.round((attrV) * 100) / 100);
 						}
 					}  
-           $('#tableData tbody').append("<tr><td>"+sr+"</td><td>"+cpp540coalAnalysis[key].title+"</td><td>"+cpp540coalAnalysis[key].parameter+"</td><td>"+uom+"</td><td><input type='text' id='value"+sr+"' data-id='"+sr+"' data-WebId='"+WebId+"' value='"+attrValue+"' class='form-control input-manual WebId'></td><td><div class='status"+sr+"'></div></td></tr>")
+           $('#tableData tbody').append("<tr><td>"+sr+"</td><td style=' text-align: left;padding-left:20px;'>"+cpp540coalAnalysis[key].title+"</td><td>"+uom+"</td><td><input type='text' id='value"+sr+"' data-id='"+sr+"' data-WebId='"+WebId+"' value='"+attrValue+"' class='form-control input-manual WebId'></td><td><div class='status"+sr+"'></div></td></tr>")
             sr++;
     });
            

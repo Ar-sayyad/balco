@@ -36,27 +36,24 @@ thead tr{
                     
                 <!-- Start Page Content -->
                 <div class="row"> 
-                        <div class="col-lg-3 newcard">
+                         <div class="col-lg-3 newcard">
                            <div class="datetimeDiv">
-                                        <h4 class="datediv">Select Date: </h4>
+                              <h4 class="datediv">Select Date-Time: </h4>
                            </div>
                         </div>
-                        <div class="col-lg-3 newcard">
+                        <div class="col-lg-2 newcard">
                            <div class="datetimeDiv">
-                                   <input type="text" class="dateTime form-control" autocomplete="off" data-date-format='yy-mm-dd'  id="dateTime"  placeholder="Date Time">
-                                
+                                <input type="text" class="dateTime form-control" autocomplete="off" data-date-format='yy-mm-dd'  id="dateTime"  placeholder="Date Time">
+                           </div>
+                        </div>                       
+                        <div class="col-lg-2 newcard">
+                           <div class="datetimeDiv">
+                                <input type="time" name="time" id="time" autocomplete="off"  step="2" readonly="" class="time form-control">                              
                            </div>
                         </div>
-                        <div class="col-lg-3 newcard">
+                        <div class="col-lg-5 newcard" style="padding-left: 50px;text-align: left;">
                            <div class="datetimeDiv">
-                                      <h4 class="datediv">Select Time: </h4>
-                              
-                           </div>
-                        </div>
-                        <div class="col-lg-3 newcard">
-                           <div class="datetimeDiv">
-                                <input type="time" name="time" id="time" autocomplete="off"  step="2" style="" class="time form-control">
-                              
+                               <button id="editTime" class="btn btn-primary"><i class="fa fa-edit"></i> Time </button>                               
                            </div>
                         </div>
                     <div class="col-lg-12">
@@ -68,8 +65,8 @@ thead tr{
                                         <thead>
                                            <tr>
                                             <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 35% !important;">CPP600 Unit3 Parameters</th>
-                                            <th style="width: 20% !important;">Name</th>
+                                            <th style="width: 55% !important; text-align: left;padding-left:20px;">CPP600 Unit3 Parameters</th>
+                                            <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
                                             <th style="width: 20% !important;">Status</th>
@@ -84,8 +81,8 @@ thead tr{
                                         <thead>
                                            <tr>
                                            <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 35% !important;">CPP600 Unit4 Parameters</th>
-                                            <th style="width: 20% !important;">Name</th>
+                                            <th style="width: 55% !important; text-align: left;padding-left:20px;">CPP600 Unit4 Parameters</th>
+                                            <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
                                             <th style="width: 20% !important;">Status</th>
