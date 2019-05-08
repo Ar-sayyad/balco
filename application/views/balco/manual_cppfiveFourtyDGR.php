@@ -10,6 +10,10 @@ thead tr{
 #dateTime, #time{
         height: 40px;
 }
+.table td:nth-child(2)
+{
+    text-align: left;padding-left:20px;
+}
 </style>
 <body class="fix-header fix-sidebar">
    <?php include('includes/preloader.php');?>
@@ -64,15 +68,15 @@ thead tr{
                                     <table id="Unit1" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
-                                            <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 55% !important; text-align: left;padding-left:20px;">Unit 1 Parameters</th>
+                                                   <th style="width: 10% !important;cursor: pointer;" onclick="sort_table('tbodyUnit1');">Sr.No.</th>
+                                            <th style="width: 45% !important; text-align: left;padding-left:20px;">Unit 1 Parameters</th>
                                             <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
                                             <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tbodyUnit1">
                                         </tbody>
                                     </table>
                             </div>
@@ -80,15 +84,15 @@ thead tr{
                                     <table id="Unit2" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
-                                           <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 55% !important; text-align: left;padding-left:20px;">Unit 2 Parameters</th>
+                                           <th style="width: 10% !important;cursor: pointer;" onclick="sort_table('tbodyUnit2');">Sr.No.</th>
+                                            <th style="width: 45% !important; text-align: left;padding-left:20px;">Unit 2 Parameters</th>
                                             <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
                                             <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tbodyUnit2">
                                         </tbody>
                                     </table>
                                  </div>
@@ -96,15 +100,15 @@ thead tr{
                                     <table id="Unit3" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
-                                            <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 55% !important; text-align: left;padding-left:20px;">Unit 3 Parameters</th>
+                                            <th style="width: 10% !important;cursor: pointer;" onclick="sort_table('tbodyUnit3');">Sr.No.</th>
+                                            <th style="width: 45% !important; text-align: left;padding-left:20px;">Unit 3 Parameters</th>
                                             <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
                                             <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tbodyUnit3">
                                         </tbody>
                                     </table>
                                  </div>
@@ -112,15 +116,15 @@ thead tr{
                                     <table id="Unit4" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
-                                           <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 55% !important; text-align: left;padding-left:20px;">Unit 4 Parameters</th>
+                                           <th style="width: 10% !important;cursor: pointer;" onclick="sort_table('tbodyUnit4');">Sr.No.</th>
+                                            <th style="width: 45% !important; text-align: left;padding-left:20px;">Unit 4 Parameters</th>
                                             <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
                                             <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tbodyUnit4">
                                         </tbody>
                                     </table>
                                  </div>
@@ -128,15 +132,15 @@ thead tr{
                                      <table id="other" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
-                                            <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 55% !important; text-align: left;padding-left:20px;">Other Parameters</th>
+                                            <th style="width: 10% !important;cursor: pointer;" onclick="sort_table('tbodyother');">Sr.No.</th>
+                                            <th style="width: 45% !important; text-align: left;padding-left:20px;">Other Parameters</th>
                                             <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
                                             <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tbodyother">
                                         </tbody>
                                     </table>
                             </div>

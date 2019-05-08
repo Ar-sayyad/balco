@@ -11,6 +11,34 @@
              $("#editTime").click(function(){
             $("#time").removeAttr("readonly")
     });
+     function sort_table(tbodyId) {
+               var tbody = document.getElementById(tbodyId);  
+                  var col=0;
+                  var asc = 1;
+            var rows = tbody.rows,
+                rlen = rows.length,
+                arr = new Array(),
+                i, j, cells, clen;
+            // fill the array with values from the table
+            for (i = 0; i < rlen; i++) {
+                cells = rows[i].cells;
+                clen = cells.length;
+                arr[i] = new Array();
+                for (j = 0; j < clen; j++) {
+                    arr[i][j] = cells[j].innerHTML;
+                }
+            }
+            // sort the array by the specified column number (col) and order (asc)
+            arr.sort(function (a, b) {
+                    var first =  parseInt(a[col]);
+                    var second =  parseInt(b[col]);
+                return (first == second) ? 0 : ((first > second) ? asc : -1 * asc);
+            });
+            // replace existing rows with new rows created from the sorted array
+            for (i = 0; i < rlen; i++) {
+                        rows[i].innerHTML = "<td>" + arr[i].join("</td><td>") + "</td>";                  
+            }
+        }
                var now = new Date();       
                  $(function() {                   
                     var month = (now.getMonth() + 1);
@@ -34,7 +62,7 @@
                         $('input[type="time"][name="time"]').attr({'value': '05:00:00' });
                       });
                    
-                  var sr=1;    
+                //  var sr=1;    
           $.each(ipp600DGR, function (key) {
            var batch = {
         "database": {
@@ -71,8 +99,8 @@
 							attrValue = (Math.round((attrV) * 100) / 100);
 						}
 					}  
-          $('#'+ipp600DGR[key].unitname+' tbody').append("<tr><td style='text-align:left;padding-left:20px;'>"+ipp600DGR[key].title+"</td><td>"+uom+"</td><td><input type='text' id='value"+sr+"' data-id='"+sr+"' data-WebId='"+WebId+"' value='"+attrValue+"' class='form-control input-manual WebId'></td><td><div class='status"+sr+"'></div></td></tr>")
-            sr++;
+          $('#'+ipp600DGR[key].unitname+' tbody').append("<tr><td>"+ipp600DGR[key].sr+"</td><td style='text-align:left;padding-left:20px;'>"+ipp600DGR[key].title+"</td><td>"+uom+"</td><td><input type='text' id='value"+ipp600DGR[key].sr+"' data-id='"+ipp600DGR[key].sr+"' data-WebId='"+WebId+"' value='"+attrValue+"' class='form-control input-manual WebId'></td><td><div class='status"+ipp600DGR[key].sr+"'></div></td></tr>")
+            sort_table("tbody"+ipp600DGR[key].unitname);
     });
            
     });

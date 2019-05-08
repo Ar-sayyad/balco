@@ -10,6 +10,11 @@ thead tr{
 #dateTime, #time{
         height: 40px;
 }
+.table td:nth-child(2)
+{
+    text-align: left;padding-left:20px;
+}
+
 </style>
 <body class="fix-header fix-sidebar">
    <?php include('includes/preloader.php');?>
@@ -63,15 +68,15 @@ thead tr{
                                     <table id="tableData" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
-                                            <th style="width: 10% !important;">Sr.No.</th>
-                                            <th style="width: 35% !important;text-align: left;padding-left:20px;">Parameters</th>
-                                            <th style="width: 20% !important;">Name</th>
+                                            <th style="width: 10% !important;"  onclick="">Sr.No.</th>
+                                            <th style="width: 50% !important;text-align: left;padding-left:20px;">Parameters</th>
+                                            <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 10% !important;">Value</th>
-                                            <th style="width: 15% !important;">Status</th>
+                                            <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="sortTable">
                                         </tbody>
                                     </table>
                             </div>
@@ -91,9 +96,6 @@ thead tr{
     <!-- End Wrapper -->
     <!-- All Jquery -->
     <?php include('includes/footer-min.php');?>
-    <script src="<?php echo base_url();?>piadmin/js/manual_cppfiveFourtyCA.js" type="text/javascript"></script>   
-    <script>
-  //  $('#tableData').DataTable();
-</script>
+    <script src="<?php echo base_url();?>piadmin/js/manual_cppfiveFourtyCA.js" type="text/javascript"></script>      
 </body>
 </html>

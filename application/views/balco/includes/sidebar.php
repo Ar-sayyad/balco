@@ -253,7 +253,7 @@
                            <a class="has-arrow" href="#" aria-expanded="false">
                                 <i class="fa fa-arrows"></i>
                                 <span class="hide-menu">PP 1200
-                                    <span class="label label-rouded label-primary pull-right">2</span>                                        
+                                    <span class="label label-rouded label-primary pull-right">3</span>                                        
                                 </span>
                             </a>
                             <ul aria-expanded="false" class="collapse">

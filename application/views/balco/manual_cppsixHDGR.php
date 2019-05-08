@@ -1,6 +1,6 @@
 <?php include('includes/header-top.php');?>
 <style>
-    .card-body {
+.card-body {
     padding: 0;
     margin: 5px;
 }
@@ -9,6 +9,10 @@ thead tr{
 }
 #dateTime, #time{
         height: 40px;
+}
+.table td:nth-child(2)
+{
+    text-align: left;padding-left:20px;
 }
 </style>
 <body class="fix-header fix-sidebar">
@@ -64,15 +68,15 @@ thead tr{
                                     <table id="cpp600unit3" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
-                                            <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 55% !important; text-align: left;padding-left:20px;">CPP600 Unit3 Parameters</th>
+                                            <th style="width: 10% !important;">Sr.No.</th>
+                                            <th style="width: 45% !important; text-align: left;padding-left:20px;">CPP600 Unit3 Parameters</th>
                                             <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
                                             <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tbodycpp600unit3">
                                         </tbody>
                                     </table>
                             </div>
@@ -80,15 +84,15 @@ thead tr{
                                     <table id="cpp600unit4" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
-                                           <!--<th style="width: 10% !important;">Sr.No.</th>-->
-                                            <th style="width: 55% !important; text-align: left;padding-left:20px;">CPP600 Unit4 Parameters</th>
+                                           <th style="width: 10% !important;">Sr.No.</th>
+                                            <th style="width: 45% !important; text-align: left;padding-left:20px;">CPP600 Unit4 Parameters</th>
                                             <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
                                             <th style="width: 20% !important;">Status</th>
                                            </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tbodycpp600unit4">
                                         </tbody>
                                     </table>
                                  </div>   
