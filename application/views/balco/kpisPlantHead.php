@@ -1,4 +1,10 @@
 <?php include('includes/header-top.php');?>
+<style>
+.table td:nth-child(2), .table th:nth-child(2)
+{
+    text-align: left;padding-left:20px;
+}
+</style>
 <body class="fix-header fix-sidebar">
    <?php include('includes/preloader.php');?>
    <!-- Main wrapper  -->
@@ -28,6 +34,7 @@
                            <table id="example23" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                               <thead>
                                  <tr style="background-color: #2177cd;">
+                                    <th rowspan="2" style="width: 8% important;">SR</th>
                                     <th rowspan="2">KPI's - Plant Performance</th>
                                     <th rowspan="2">UOM</th>
                                     <th colspan="2">CPP 540 MW</th>
@@ -43,6 +50,7 @@
                                     <th>ACT</th>
                                  </tr>
                               </thead>
+                              <tbody></tbody>
                            </table>
                         </div>
                      </div>

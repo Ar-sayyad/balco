@@ -1,12 +1,11 @@
 $(document).ready(function () {
-	var t = $('#example23').DataTable();
-	$.each(kpisOverallPlant, function (key) {
-		if (kpisOverallPlant[key].afname === 'Trips' || kpisOverallPlant[key].afname === 'TubeLeaks') {} else {
+	var t = $('#example23').DataTable();          
+	$.each(plantHead, function (key) {
 			var rankingElements = [];
 			var batch = {
 				"database": {
 					"Method": "GET",
-					"Resource": baseServiceUrl + "elements?path=\\\\" + afServerName + "\\" + afDatabaseName + "\\KPIS\\PlantHead\\" + kpisOverallPlant[key].afname + "&selectedFields=WebId;Links.Elements"
+					"Resource": baseServiceUrl + "elements?path=\\\\" + afServerName + "\\" + afDatabaseName + "\\KPIS\\PlantHead\\" + plantHead[key].afname + "&selectedFields=WebId;Links.Elements"
 				},
 				"elements": {
 					"Method": "GET",
@@ -17,7 +16,7 @@ $(document).ready(function () {
 				"attributes": {
 					"Method": "GET",
 					"RequestTemplate": {
-						"Resource": baseServiceUrl + "attributes/multiple?selectedFields=Items.Object.Name;Items.Object.Path;Items.Object.WebId&" + kpisOverallPlant[key].path
+						"Resource": baseServiceUrl + "attributes/multiple?selectedFields=Items.Object.Name;Items.Object.Path;Items.Object.WebId&" + plantHead[key].path
 					},
 					"ParentIds": ["elements"],
 					"Parameters": ["$.elements.Content.Items[*].Path"]
@@ -65,14 +64,14 @@ $(document).ready(function () {
 					rankingElements[elementID] = elementItems;
 				});
 				var rows = [];
-				rows.push(kpisOverallPlant[key].afname);
+                                                     rows.push(plantHead[key].sr);
+				rows.push(plantHead[key].afname);
                                                      rows.push(UOM);
 				$.each(rankingElements, function (key1) {
 					rows.push(rankingElements[key1][1], rankingElements[key1][0]);
 				});
 				t.row.add(rows).draw(!1);
 			});
-
-		}
+                                t.page.len( -1 ).draw();		
 	});
 });

@@ -1,13 +1,8 @@
-//var baseServiceUrl="https://bldb:4440/piwebapi/";
-//var user="cmdc";
-//var pass="system@01";
-//var afServerName="BLDB";
-//var afDatabaseName="BALCOPOWER\\VEDANTA\\BALCO\\WebPortal";
-var baseServiceUrl = "https://ecgdevserver:1706/piwebapi/";//https://192.168.1.178:1706/piwebapi/
-var user = "piwebapiuser";//"Ashif";
-var pass = "webapiuser@2019";//"Ecgit@123";
-var afServerName = "ECGDEVSERVER";//"ASHIF-DMGLBQI";//
-var afDatabaseName = "BALCOPOWER\\VEDANTA\\BALCO\\WebPortal"; //
+var baseServiceUrl="https://bldb:4440/piwebapi/";
+var user="cmdc";
+var pass="system@01";
+var afServerName="BLDB";
+var afDatabaseName="BALCOPOWER\\VEDANTA\\BALCO\\WebPortal";
 var enableBasicAuth=!0;
 var processJsonContent = function (url, type, data) {
 	return $.ajax({
@@ -951,6 +946,68 @@ var cpp600DGR=[
 ];
 /** CPP600 DGR End**/
 
+var plantHead = [
+           {
+                "sr":1,
+                "afname": "Plant Load Factor",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":2,
+                "afname": "Plant Availability Factor",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":3,
+                "afname": "Gross Genration",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":4,
+                "afname": "Aux Power Cons",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":5,
+                "afname": "Net Generation",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":6,
+                "afname": "Gross Heat Rate",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":7,
+                "afname": "SCC",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":8,   
+                "afname": "Coal Consumption",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":9,   
+                "afname": "SOC",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":10,   
+                "afname": "Oil Consumption",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":11,   
+                "afname": "GCV",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+           {
+                "sr":12,   
+                "afname": "Tripping",
+                "path": "path={0}|ACT&path={0}|BP",
+           },
+];
 var kpisOverallPlant = [{
 		"afname": "PLF",
 		"div": "plantloadfactor",
