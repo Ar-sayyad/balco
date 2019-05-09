@@ -6,7 +6,7 @@ $(document).ready(function () {
 			var batch = {
 				"database": {
 					"Method": "GET",
-					"Resource": baseServiceUrl + "elements?path=\\\\" + afServerName + "\\" + afDatabaseName + "\\KPIS\\OverallPlant\\" + kpisOverallPlant[key].afname + "&selectedFields=WebId;Links.Elements"
+					"Resource": baseServiceUrl + "elements?path=\\\\" + afServerName + "\\" + afDatabaseName + "\\KPIS\\PlantHead\\" + kpisOverallPlant[key].afname + "&selectedFields=WebId;Links.Elements"
 				},
 				"elements": {
 					"Method": "GET",
@@ -39,6 +39,7 @@ $(document).ready(function () {
 			$.when(batchResult).done(function () {
 				var batchResultItems = (batchResult.responseJSON.attributes.Content.Items);
 				let valuesID = 0;
+                                                     var UOM = (batchResult.responseJSON.values.Content.Items[valuesID].Content.UnitsAbbreviation);
 				$.each(batchResultItems, function (elementID) {
 					var attrItems = batchResultItems[elementID].Content.Items;
 					var elementName = batchResult.responseJSON.elements.Content.Items[elementID].Name;
@@ -52,11 +53,12 @@ $(document).ready(function () {
 							}
 							if (batchResult.responseJSON.values.Content.Items !== undefined && (batchResult.responseJSON.values.Content.Status === undefined || batchResult.responseJSON.values.Content.Status < 400) && batchResult.responseJSON.values.Content.Items[valuesID].Status === 200) {
 								var attrV = getNestedObject(batchResult.responseJSON.values, ['Content', 'Items', valuesID, 'Content', 'Value']);
+                                                                                                           var UOM = getNestedObject(batchResult.responseJSON.values, ['Content', 'Items', valuesID, 'Content', 'UnitsAbbreviation']);
 								if (attrV !== "" && !isNaN(attrV)) {
 									attrValue = (Math.round((attrV) * 100) / 100);
 								}
 							}
-						}
+						}                                                               
 						elementItems[attrID] = attrValue;
 						valuesID++;
 					});
@@ -64,6 +66,7 @@ $(document).ready(function () {
 				});
 				var rows = [];
 				rows.push(kpisOverallPlant[key].afname);
+                                                     rows.push(UOM);
 				$.each(rankingElements, function (key1) {
 					rows.push(rankingElements[key1][1], rankingElements[key1][0]);
 				});

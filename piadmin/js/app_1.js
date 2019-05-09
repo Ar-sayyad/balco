@@ -35,6 +35,27 @@ var makeBasicAuth = function (user, password) {
 	return "Basic " + hash
 }
 
+var json = {
+    "ActivityType": "CHAT_TRANSCRIPT",
+    "SessionId": "7e9b73e3-b16b-4ba9-bc5f-d701faeb0ce5",
+    "Transcript": [ {
+        "Member": "Customer", "Timestamp": "2019-05-08 17:15:02", "Direction": "Inbound", "Message": "initial question goes here"
+    }
+    ,
+    {
+        "Member": "Customer", "Timestamp": "2019-05-08 17:15:03", "Direction": "Inbound", "Message": "Customer form input: FullName: Customer EmailAddress: stripathy@partneritsm.com PhoneNumber: 9890344229"
+    }
+    ,
+    {
+        "Member": "Demo Agent 1", "Timestamp": "2019-05-08 17:15:09", "Direction": "Outbound", "Message": "You are connected."
+    }
+    ,
+    {
+        "Member": "Customer", "Timestamp": "2019-05-08 17:15:15", "Direction": "Inbound", "Message": "need help with passwords "
+    }
+    ]
+};
+
 
 var cpp540coalAnalysis=[
         {

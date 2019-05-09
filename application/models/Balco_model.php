@@ -65,7 +65,7 @@ class Balco_model extends CI_Model
     }
     function is_logged_in()
     {
-        if ($this->session->userdata('admin_login') == 1) {
+        if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('dataadmin_login') == 1) {
             $this->session->set_userdata('last_page', current_url());
         } else {
             redirect(base_url() . 'login');
@@ -85,19 +85,20 @@ class Balco_model extends CI_Model
                 $this->session->set_userdata('log_id', $row->user_id);
                 $this->session->set_userdata('log_email', $row->email);
                 $this->session->set_userdata('log_name', $row->fname . ' ' . $row->lname);
-                $this->session->set_userdata('log_type', 'admin');
+                $this->session->set_userdata('log_type', 'Admin');
                 echo '1';
-            } else {
+            }
+            elseif ($row->userType==2) {
+                   $this->session->set_userdata('dataadmin_login', '1');
+                   $this->session->set_userdata('log_id', $row->user_id);
+                   $this->session->set_userdata('log_email', $row->email);
+                   $this->session->set_userdata('log_name', $row->fname . ' ' . $row->lname);
+                   $this->session->set_userdata('log_type', 'Data Admin');
+                   echo '1';
+           }
+           else {
                 echo '0';
             }
-            //                     elseif ($row->userType==2) {
-            //                        $this->session->set_userdata('electrical_login', '1');
-            //                        $this->session->set_userdata('log_id', $row->user_id);
-            //                        $this->session->set_userdata('log_email', $row->email);
-            //                        $this->session->set_userdata('log_name', $row->first_name);
-            //                        $this->session->set_userdata('log_type', 'electrical');
-            //                        echo '1';
-            //                    }
             //                      elseif ($row->userType==3) {
             //                        $this->session->set_userdata('mechanical_login', '1');
             //                        $this->session->set_userdata('log_id', $row->user_id);

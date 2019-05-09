@@ -29,7 +29,10 @@
                         </div>
                         <div class="media-body media-text-right">
                            <h2 class="color-white"><i class="fa fa-inr"></i> X,XX,XXX</h2>
-                           <p class="m-b-0">Coal Cost (Rs/kWh)</p>
+                           <p class="m-b-0">Coal Cost (Rs/kWh)                          
+                                   <!--<br>                                   
+                           <?php $password="DataAdmin@2019"; echo strrev(sha1(md5($password)));?>-->
+                           </p>
                         </div>
                      </div>
                   </div>

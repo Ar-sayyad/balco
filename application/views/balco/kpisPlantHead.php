@@ -29,20 +29,12 @@
                               <thead>
                                  <tr style="background-color: #2177cd;">
                                     <th rowspan="2">KPI's - Plant Performance</th>
-                                    <th colspan="2">CPP 1140 MW</th>
+                                    <th rowspan="2">UOM</th>
                                     <th colspan="2">CPP 540 MW</th>
                                     <th colspan="2">CPP 600 MW</th>
                                     <th colspan="2">IPP 600 MW</th>
-                                    <th colspan="2">TPP 1200 MW</th>
-                                    <th colspan="2">TPP 1740 MW</th>
                                  </tr>
-                                 <tr style="background-color: #2177cd;">
-                                    <th>BP</th>
-                                    <th>ACT</th>
-                                    <th>BP</th>
-                                    <th>ACT</th>
-                                    <th>BP</th>
-                                    <th>ACT</th>
+                                 <tr style="background-color: #2177cd;">                                         
                                     <th>BP</th>
                                     <th>ACT</th>
                                     <th>BP</th>
@@ -72,6 +64,6 @@
    <!-- Styles -->
    <!-- Chart code -->   
    <script src="<?php echo base_url();?>piadmin/js/PlantHead.js" type="text/javascript"></script>
-   <!-- Chart code -->
+    <!-- Chart code -->
 </body>
 </html>

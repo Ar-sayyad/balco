@@ -1,4 +1,6 @@
- <div class="scroll-sidebar">
+ <?php if($this->session->userdata('admin_login') == 1)
+           { ?>
+<div class="scroll-sidebar">
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
@@ -266,3 +268,6 @@
         </nav>
         <!-- End Sidebar navigation -->
  </div>
+<?php }
+        elseif ($this->session->userdata('dataadmin_login') == 1)
+            { include('dataadmin_sidebar.php');}
