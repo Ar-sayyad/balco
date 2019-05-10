@@ -2482,7 +2482,7 @@ textarea {
   padding-top: 5px;
 }
 .dt-buttons {
-  display: inline-block;
+  display: none;
   margin-bottom: 10px;
   padding-top: 5px;
 }
@@ -2500,7 +2500,7 @@ textarea {
 }
 .dataTables_info,
 .dataTables_length {
-  display: inline-block;
+  display: none;
   font-size: 13px;
 }
 .dataTables_length {
@@ -2531,6 +2531,7 @@ textarea {
 .dataTables_filter {
   float: right;
   margin-top: 10px;
+  display: none;
 }
 .dataTables_filter input {
   background-color: transparent;
@@ -2583,6 +2584,7 @@ table.dataTable thead .sorting::after {
   padding-top: 0.25em;
   text-align: right;
   font-size: 13px;
+  display: none;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   border: 1px solid #ddd;

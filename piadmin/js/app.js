@@ -329,39 +329,39 @@ var cpp540DGR=[
                 "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
                 "path":"path={0}|TOT_EXPORT_CTU.MAN"
            },
-           {
-                "title":"Coal Consumption",
-                 "sr":23,
-                "UOM":"MU",
-                "unitname":"other",
-                "tagname":"BALCO_CPP540_TOT_COAL_CONS.MAN",
-                "parameter":"TOT_COAL_CONS.MAN",
-                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
-                "path":"path={0}|TOT_COAL_CONS.MAN"
-           },  
-           {
-                "title":"Total LDO Consumption",
-                 "sr":24,
-                "UOM":"kl",
-                "unitname":"other",
-                "tagname":"BALCO_CPP540_TOT_LDO_CONS.MAN",
-                "parameter":"TOT_LDO_CONS.MAN",
-                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
-                "path":"path={0}|TOT_LDO_CONS.MAN"
-           },           
-           {
-                "title":"Total HFO Consumption",
-                 "sr":25,
-                "UOM":"kl",
-                "unitname":"other",
-                "tagname":"BALCO_CPP540_TOT_HFO_CONS.MAN",
-                "parameter":"TOT_HFO_CONS.MAN",
-                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
-                "path":"path={0}|TOT_HFO_CONS.MAN"
-           },   
+//           {
+//                "title":"Coal Consumption",
+//                 "sr":23,
+//                "UOM":"MU",
+//                "unitname":"other",
+//                "tagname":"BALCO_CPP540_TOT_COAL_CONS.MAN",
+//                "parameter":"TOT_COAL_CONS.MAN",
+//                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
+//                "path":"path={0}|TOT_COAL_CONS.MAN"
+//           },  
+//           {
+//                "title":"Total LDO Consumption",
+//                 "sr":24,
+//                "UOM":"kl",
+//                "unitname":"other",
+//                "tagname":"BALCO_CPP540_TOT_LDO_CONS.MAN",
+//                "parameter":"TOT_LDO_CONS.MAN",
+//                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
+//                "path":"path={0}|TOT_LDO_CONS.MAN"
+//           },           
+//           {
+//                "title":"Total HFO Consumption",
+//                 "sr":25,
+//                "UOM":"kl",
+//                "unitname":"other",
+//                "tagname":"BALCO_CPP540_TOT_HFO_CONS.MAN",
+//                "parameter":"TOT_HFO_CONS.MAN",
+//                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
+//                "path":"path={0}|TOT_HFO_CONS.MAN"
+//           },   
             {
                 "title":"Raw Water Consumption",
-                 "sr":26,
+                 "sr":23,
                 "UOM":"m3",
                 "unitname":"other",
                 "tagname":"BALCO_CPP540_RAW_WTR_CONS.MAN",
@@ -959,12 +959,12 @@ var plantHead = [
            },
            {
                 "sr":3,
-                "afname": "Gross Genration",
+                "afname": "Gross Generation",
                 "path": "path={0}|ACT&path={0}|BP",
            },
            {
                 "sr":4,
-                "afname": "Aux Power Cons",
+                "afname": "Aux Power Consumption",
                 "path": "path={0}|ACT&path={0}|BP",
            },
            {
@@ -1004,7 +1004,7 @@ var plantHead = [
            },
            {
                 "sr":12,   
-                "afname": "Tripping",
+                "afname": "Trippings",
                 "path": "path={0}|ACT&path={0}|BP",
            },
 ];

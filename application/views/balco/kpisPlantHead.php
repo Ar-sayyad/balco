@@ -34,7 +34,7 @@
                            <table id="example23" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                               <thead>
                                  <tr style="background-color: #2177cd;">
-                                    <th rowspan="2" style="width: 8% important;">SR</th>
+                                    <th rowspan="2" style="width: 5% important;">SR</th>
                                     <th rowspan="2">KPI's - Plant Performance</th>
                                     <th rowspan="2">UOM</th>
                                     <th colspan="2">CPP 540 MW</th>

@@ -65,6 +65,7 @@ thead tr{
                         <div class="card mydata">   
                             <div class="card-body">   
                                      <button style="float:right;margin-bottom: 5px;" class="btn btn-primary" id="sendToPi"><i class="fa fa-database"></i> Send Data to PI <i class="fa fa-send"></i></button>
+                                    <button style="float:right;margin-bottom: 5px;margin-right: 20px;" class="btn btn-info" id="refresh"><i class="fa fa-refresh"></i> Refresh</button>
                                     <table id="tableData" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>

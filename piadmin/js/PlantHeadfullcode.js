@@ -55,6 +55,7 @@ $(document).ready(function () {
                                                                                                            var UOM = getNestedObject(batchResult.responseJSON.values, ['Content', 'Items', valuesID, 'Content', 'UnitsAbbreviation']);
 								if (attrV !== "" && !isNaN(attrV)) {
 									attrValue = (Math.round((attrV) * 100) / 100);
+                                                                                                                       //attrValue = attrV.toFixed(2);
 								}
 							}
 						}                                                               

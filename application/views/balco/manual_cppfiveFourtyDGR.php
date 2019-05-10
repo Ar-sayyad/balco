@@ -57,14 +57,16 @@ thead tr{
                         </div>
                         <div class="col-lg-5 newcard" style="padding-left: 50px;text-align: left;">
                            <div class="datetimeDiv">
-                               <button id="editTime" class="btn btn-primary"><i class="fa fa-edit"></i> Time </button>                               
+                               <button id="editTime" class="btn btn-primary"><i class="fa fa-edit"></i> Time</button>                               
+                           
+                               <!--<button id="saveTime" class="btn btn-success"><i class="fa fa-save"></i> </button>-->                               
                            </div>
                         </div>
                     <div class="col-lg-12">
                         <div class="card mydata">
-                            <div class="card-body"> 
-                                     <button style="float:right;margin-bottom: 5px;" class="btn btn-primary" id="sendToPi"><i class="fa fa-database"></i> Send Data to PI <i class="fa fa-send"></i></button>
-                                    
+                            <div class="card-body">                                      
+                                    <button style="float:right;margin-bottom: 5px;" class="btn btn-primary" id="sendToPi"><i class="fa fa-database"></i> Send Data to PI <i class="fa fa-send"></i></button>
+                                    <button style="float:right;margin-bottom: 5px;margin-right: 20px;" class="btn btn-info" id="refresh"><i class="fa fa-refresh"></i> Refresh</button>
                                     <table id="Unit1" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                            <tr>
@@ -133,7 +135,7 @@ thead tr{
                                         <thead>
                                            <tr>
                                             <th style="width: 10% !important;cursor: pointer;" onclick="sort_table('tbodyother');">Sr.No.</th>
-                                            <th style="width: 45% !important; text-align: left;padding-left:20px;">Other Parameters</th>
+                                            <th style="width: 45% !important; text-align: left;padding-left:20px;">Station Parameters</th>
                                             <!--<th style="width: 20% !important;">Name</th>-->
                                             <th style="width: 10% !important;">UOM</th>
                                             <th style="width: 15% !important;">Value</th>
