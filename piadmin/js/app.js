@@ -328,7 +328,7 @@ var cpp540DGR=[
                 "parameter":"TOT_EXPORT_CTU.MAN",
                 "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
                 "path":"path={0}|TOT_EXPORT_CTU.MAN"
-           },
+           }
 //           {
 //                "title":"Coal Consumption",
 //                 "sr":23,
@@ -359,16 +359,16 @@ var cpp540DGR=[
 //                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
 //                "path":"path={0}|TOT_HFO_CONS.MAN"
 //           },   
-            {
-                "title":"Raw Water Consumption",
-                 "sr":23,
-                "UOM":"m3",
-                "unitname":"other",
-                "tagname":"BALCO_CPP540_RAW_WTR_CONS.MAN",
-                "parameter":"RAW_WTR_CONS.MAN",
-                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
-                "path":"path={0}|RAW_WTR_CONS.MAN"
-           }      
+//            {
+//                "title":"Raw Water Consumption",
+//                 "sr":23,
+//                "UOM":"m3",
+//                "unitname":"other",
+//                "tagname":"BALCO_CPP540_RAW_WTR_CONS.MAN",
+//                "parameter":"RAW_WTR_CONS.MAN",
+//                "tag_path":"\\\\BLDB\\BALCOPOWER\\VEDANTA\\BALCO\\CPP%20-%20540MW",
+//                "path":"path={0}|RAW_WTR_CONS.MAN"
+//           }      
            
 ];
 
@@ -951,61 +951,73 @@ var plantHead = [
                 "sr":1,
                 "afname": "Plant Load Factor",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":2
            },
            {
                 "sr":2,
                 "afname": "Plant Availability Factor",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":2
            },
            {
                 "sr":3,
                 "afname": "Gross Generation",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":3
            },
            {
                 "sr":4,
                 "afname": "Aux Power Consumption",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":2
            },
            {
                 "sr":5,
                 "afname": "Net Generation",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":3
            },
            {
                 "sr":6,
                 "afname": "Gross Heat Rate",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":0
            },
            {
                 "sr":7,
                 "afname": "SCC",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":3
            },
            {
                 "sr":8,   
                 "afname": "Coal Consumption",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":0
            },
            {
                 "sr":9,   
                 "afname": "SOC",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":3
            },
            {
                 "sr":10,   
                 "afname": "Oil Consumption",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":2
            },
            {
                 "sr":11,   
                 "afname": "GCV",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":0
            },
            {
                 "sr":12,   
                 "afname": "Trippings",
                 "path": "path={0}|ACT&path={0}|BP",
+                "digits":0
            },
 ];
 var kpisOverallPlant = [{

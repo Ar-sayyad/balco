@@ -34,20 +34,20 @@
                            <table id="example23" class="display nowrap table table-striped  table-bordered" cellspacing="0" width="100%">
                               <thead>
                                  <tr style="background-color: #2177cd;">
-                                    <th rowspan="2" style="width: 5% important;">SR</th>
-                                    <th rowspan="2">KPI's - Plant Performance</th>
-                                    <th rowspan="2">UOM</th>
-                                    <th colspan="2">CPP 540 MW</th>
-                                    <th colspan="2">CPP 600 MW</th>
-                                    <th colspan="2">IPP 600 MW</th>
+                                    <th rowspan="2" style="width: 5% important;">S.No</th>
+                                    <th rowspan="2" style="width: 25% important;">KPI's - Plant Performance</th>
+                                    <th rowspan="2" style="width: 10% important;">UOM</th>
+                                    <th colspan="2" style="width: 20% important;">CPP 540 MW</th>
+                                    <th colspan="2" style="width: 20% important;">CPP 600 MW</th>
+                                    <th colspan="2" style="width: 20% important;">IPP 600 MW</th>
                                  </tr>
                                  <tr style="background-color: #2177cd;">                                         
-                                    <th>BP</th>
-                                    <th>ACT</th>
-                                    <th>BP</th>
-                                    <th>ACT</th>
-                                    <th>BP</th>
-                                    <th>ACT</th>
+                                    <th style="width: 10% important;">BP</th>
+                                    <th style="width: 10% important;">ACT</th>
+                                    <th style="width: 10% important;">BP</th>
+                                    <th style="width: 10% important;">ACT</th>
+                                    <th style="width: 10% important;">BP</th>
+                                    <th style="width: 10% important;">ACT</th>
                                  </tr>
                               </thead>
                               <tbody></tbody>

@@ -38,7 +38,9 @@ $(document).ready(function () {
 			$.when(batchResult).done(function () {
 				var batchResultItems = (batchResult.responseJSON.attributes.Content.Items);
 				let valuesID = 0;
-                                                     var UOM = (batchResult.responseJSON.values.Content.Items[valuesID].Content.UnitsAbbreviation);
+                                                     var UOM="-";
+                                                     var UO = (batchResult.responseJSON.values.Content.Items[valuesID].Content.UnitsAbbreviation);
+                                                      if(UO){ UOM=UO; }
 				$.each(batchResultItems, function (elementID) {
 					var attrItems = batchResultItems[elementID].Content.Items;
 					var elementName = batchResult.responseJSON.elements.Content.Items[elementID].Name;
@@ -52,10 +54,11 @@ $(document).ready(function () {
 							}
 							if (batchResult.responseJSON.values.Content.Items !== undefined && (batchResult.responseJSON.values.Content.Status === undefined || batchResult.responseJSON.values.Content.Status < 400) && batchResult.responseJSON.values.Content.Items[valuesID].Status === 200) {
 								var attrV = getNestedObject(batchResult.responseJSON.values, ['Content', 'Items', valuesID, 'Content', 'Value']);
-                                                                                                           var UOM = getNestedObject(batchResult.responseJSON.values, ['Content', 'Items', valuesID, 'Content', 'UnitsAbbreviation']);
+                                                                                                          // var U = getNestedObject(batchResult.responseJSON.values, ['Content', 'Items', valuesID, 'Content', 'UnitsAbbreviation']);  
+                                                                                                          
 								if (attrV !== "" && !isNaN(attrV)) {
-									attrValue = (Math.round((attrV) * 100) / 100);
-                                                                                                                       //attrValue = attrV.toFixed(2);
+									//attrValue = (Math.round((attrV) * 100) / 100);
+                                                                                                                        attrValue = (attrV).toFixed(plantHead[key].digits);
 								}
 							}
 						}                                                               

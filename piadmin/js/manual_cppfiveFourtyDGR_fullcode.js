@@ -13,11 +13,16 @@
     }
    });
    $("#editTime").click(function() {
-    $("#time").removeAttr("readonly");
-    $('input[type="time"][name="time"]').attr({
-     'value': '05:00:00'
-    });
-   });
+  $("#time").removeAttr("readonly");
+  $("#sendToPi").attr('disabled', true); 
+  $('input[type="time"][name="time"]').attr({
+   'value': '05:00:00'
+  });
+ });
+ $("#saveTime").click(function() {
+  $("#time").attr('readonly', true); 
+  $("#sendToPi").removeAttr('disabled');  
+ });
    $("#refresh").click(function() {
     $.each($(".WebId"), function() {
      var Id = $(this).attr("data-Id");
@@ -79,7 +84,7 @@
     if (m < 10) m = '0' + m;
     if (s < 10) s = '0' + s;
     $('input[type="time"][name="time"]').attr({
-     'value': '-:-:-'
+     'value': '05:00:00'
     });
    });
 
