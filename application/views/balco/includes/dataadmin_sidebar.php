@@ -6,17 +6,6 @@
                 <li class="nav-label">Dashboard</li>
                 <li><a href="<?php echo base_url();?>"><i class="fa fa-home"></i> Home </a></li>
                 <li><a href="<?php echo base_url();?>kpis/plantHead"><i class="fa fa-table"></i>KPIS Plant Head</a></li> 
-<!--                <li>
-                    <a class="has-arrow" href="#" aria-expanded="false">
-                        <i class="fa fa-arrows"></i>
-                        <span class="hide-menu">KPIS
-                            <span class="label label-rouded label-primary pull-right">1</span>                                        
-                        </span>
-                    </a>
-                    <ul aria-expanded="false" class="collapse">
-                         <li><a href="<?php echo base_url();?>kpis/plantHead"><i class="fa fa-table"></i>KPIS Plant Head</a></li> 
-                    </ul>
-                </li>                        -->
            <li class="nav-label">Manual Entry</li>
                 <li>
                            <a class="has-arrow" href="#" aria-expanded="false">

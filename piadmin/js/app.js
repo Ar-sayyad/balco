@@ -1,8 +1,13 @@
-var baseServiceUrl="https://bldb:4440/piwebapi/";
-var user="cmdc";
-var pass="system@01";
-var afServerName="BLDB";
-var afDatabaseName="BALCOPOWER\\VEDANTA\\BALCO\\WebPortal";
+//var baseServiceUrl="https://bldb:4440/piwebapi/";
+//var user="cmdc";
+//var pass="system@01";
+//var afServerName="BLDB";
+//var afDatabaseName="BALCOPOWER\\VEDANTA\\BALCO\\WebPortal";
+var baseServiceUrl = "https://ecgdevserver:1706/piwebapi/";//https://192.168.1.178:1706/piwebapi/
+var user = "piwebapiuser";//"Ashif";
+var pass = "webapiuser@2019";//"Ecgit@123";
+var afServerName = "ECGDEVSERVER";//"ASHIF-DMGLBQI";//
+var afDatabaseName = "BALCOPOWER\\VEDANTA\\BALCO\\WebPortal"; //
 var enableBasicAuth=!0;
 var processJsonContent = function (url, type, data) {
 	return $.ajax({
