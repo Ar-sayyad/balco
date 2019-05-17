@@ -21,7 +21,7 @@ class reports extends CI_Controller {
                 $data['title'] = "Reports <i class='fa fa-angle-double-right'></i> Daily Perf Reports";
                 $data['titlebar'] = "Reports >> Daily Perf Reports";
                 $data['icons'] = "bubble_chart";
-                $data['path'] = "http://bldb/ReportServer_SSRS/Pages/ReportViewer.aspx?%2fBalco_Power_Report%2fPerformanceReport&rs:Embed=true";
+                $data['path'] = "https://bldb:8090/ReportServer_SSRS/Pages/ReportViewer.aspx?%2fBalco_Power_Report%2fPerformanceReport&rs:Embed=true";
                 $this->load->view('balco/Report',$data); 		
           }
         
@@ -29,7 +29,7 @@ class reports extends CI_Controller {
                 $data['title'] = "Reports <i class='fa fa-angle-double-right'></i> Daily Perf Reports";
                 $data['titlebar'] = "Reports >> Daily Perf Reports";
                 $data['icons'] = "bubble_chart";
-                $data['path'] = "http://bldb/ReportServer_SSRS/Pages/ReportViewer.aspx?%2fBalco_Power_Report%2fPerformanceReport&rs:Embed=true";
+                $data['path'] = "https://bldb:8090/ReportServer_SSRS/Pages/ReportViewer.aspx?%2fBalco_Power_Report%2fPerformanceReport&rs:Embed=true";
                 $this->load->view('balco/Report',$data); 
           }
         
@@ -39,7 +39,7 @@ class reports extends CI_Controller {
                 $data['title'] = "Reports <i class='fa fa-angle-double-right'></i> Real-Time Perf Reports";
                 $data['titlebar'] = "Reports >> Real-Time Perf Reports";
                 $data['icons'] = "bubble_chart";
-                $data['path'] = "http://bldb/ReportServer_SSRS/Pages/ReportViewer.aspx?%2fBalco_Power_Report%2fPerformanceReportSnapshot&rs:Embed=true";
+                $data['path'] = "https://bldb:8090/ReportServer_SSRS/Pages/ReportViewer.aspx?%2fBalco_Power_Report%2fPerformanceReportSnapshot&rs:Embed=true";
                 $this->load->view('balco/Report',$data); 
           }     
        
